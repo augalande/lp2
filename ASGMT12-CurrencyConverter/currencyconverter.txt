@@ -1,0 +1,31 @@
+/*
+CurrencyConverter c= new CurrencyConverter();
+c.Converter(25000,c.CURR_INR,c.CURR_JPY);
+*/
+public class CurrencyConverter 
+{
+    public Decimal CURR_INR;
+    public Decimal CURR_USD;
+    public Decimal CURR_EUR;
+    public Decimal CURR_GBP;
+    public Decimal CURR_JPY;
+    public Decimal amount;
+    public Decimal convertedAmount;
+    
+    public CurrencyConverter()
+    {
+      CURR_INR=83;
+      CURR_USD=1.0;
+      CURR_EUR=0.93;
+      CURR_GBP=0.79;
+      CURR_JPY=153;
+        
+    }
+ 
+    public void Converter(Decimal amount,Decimal fromCurr,Decimal toCurr)
+    {
+        this.amount=amount;
+        convertedAmount=(amount/fromCurr)*toCurr;
+        System.debug('Converted Amount = '+convertedAmount);
+    }
+}

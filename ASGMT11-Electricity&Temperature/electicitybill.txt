@@ -1,0 +1,36 @@
+/*
+ElectricityBill e=new ElectricityBill(301);
+e.Calculate();
+*/
+public class ElectricityBill 
+{
+    public Integer units;
+    public Decimal cost;
+    
+    public ElectricityBill(Integer units)
+    {
+        this.units=units;
+    }
+    
+    public void Calculate()
+    {
+        if(units<=100)
+        {
+            cost=units*5;
+        }
+        else if(units<=200)
+        {
+            cost=100*5+(units-100)*7.5;
+        }
+        else if(units<=300)
+        {
+            cost=100*5+100*7.5+(units-200)*10;
+        }
+        else if(units>300)
+        {
+            cost=100*5+100*7.5+100*10+(units-300)*15;
+        }
+        System.debug('Total Electicity Bill Cost : '+cost);
+    }
+
+}

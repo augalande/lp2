@@ -1,0 +1,70 @@
+/*
+Calculator c=new Calculator(23,14,'+');
+c.Calculate();
+System.debug('Result = '+c.result);
+*/
+
+public class Calculator 
+{  
+    public Decimal num1; 
+    public Decimal num2 ;
+    public String operator; 
+    public Decimal result ;
+    
+    public Calculator(Decimal num1, Decimal num2, String operator) 
+    {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.operator = operator;
+    }
+    
+    public void Calculate()
+    {       
+            if(operator == '+')
+            {
+                result=num1+num2;
+            }
+            else if(operator == '-')
+            {
+                result=num1-num2;
+            }
+            else if(operator == '*')
+            {
+                result=num1*num2;
+            }
+            else if(operator == '/')
+            {
+                if(num2!=0)
+                {
+                    result=num1/num2;
+                }
+                else
+                {
+                    System.debug('Cannot Divide by Zero !!');
+                }
+            }
+            else if(operator == 'sqrt')
+            {
+                if(num1>=0)
+                {
+                    result=Math.sqrt(num1);
+                }
+                else
+                {
+                    System.debug('Square Root of Negative Number is not possible !!');
+                }
+            }
+            else if(operator == 'cbrt')
+            {
+                result=Math.cbrt(num1);
+            }
+            else if(operator == 'square')
+            {
+                result=num1*num1;
+            } 
+        	else if (operator=='pow')
+            {
+                result=Math.pow(Integer.valueOf(num1),Integer.valueOf(num2));
+            }
+    }    
+}

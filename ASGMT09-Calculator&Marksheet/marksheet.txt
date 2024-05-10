@@ -1,0 +1,67 @@
+/*
+Marksheet m=new Marksheet('Aryan Galande','31324',85,76,92,45);
+m.Calculate();
+m.Display();
+*/
+public class Marksheet 
+{
+	public String name;
+    public String rollno;
+    public Decimal dsbda_marks;
+    public Decimal ai_marks;
+    public Decimal wt_marks;
+    public Decimal cc_marks;
+    public Decimal average;
+    public String grade;
+    
+    public Marksheet( String name,String rollno,Decimal dsbda_marks,Decimal ai_marks,Decimal wt_marks,Decimal cc_marks)
+    {
+        this.name=name;
+        this.rollno=rollno;
+        this.dsbda_marks=dsbda_marks;
+        this.ai_marks=ai_marks;
+        this.wt_marks=wt_marks;
+        this.cc_marks=cc_marks;   
+    }
+    
+    public void Calculate()
+    {
+        average=(dsbda_marks+ai_marks+wt_marks+cc_marks)/4;
+        
+        if(average>=90)
+        {
+            grade='O+';
+        }
+        else if(average>=80)
+        {
+            grade='O';
+        }
+        else if(average>=70)
+        {
+            grade='A+';
+        }
+        else if(average>=60)
+        {
+            grade='A';
+        }
+        else if(average>=50)
+        {
+            grade='B+';
+        }
+        else if(average>=40)
+        {
+            grade='B';
+        }
+        else 
+        {
+            grade='Fail';
+        } 
+    }
+    public void Display()
+    {
+        System.debug('Name : '+name);
+        System.debug('Roll Number : '+rollno);
+        System.debug('Average Marks : '+average);
+        System.debug('Grade : '+grade);
+    }
+}

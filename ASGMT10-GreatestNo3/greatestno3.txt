@@ -1,0 +1,35 @@
+/*
+GreatestNumber3 g=new GreatestNumber3(2,4,5);
+g.Calculate();
+*/
+public class GreatestNumber3 
+{
+    public Decimal num1;
+    public Decimal num2;
+    public Decimal num3;
+    public Decimal greatest;
+
+    public GreatestNumber3(Decimal num1,Decimal num2,Decimal num3)
+    {
+        this.num1=num1;
+        this.num2=num2;
+        this.num3=num3;
+    }
+    
+    public void Calculate()
+    {
+        if(num1>=num2 && num1>=num3)
+        {
+            greatest=num1;
+        }
+        else if(num2>=num1 && num2>=num3)
+        {
+            greatest=num2;  
+        }
+        else if(num3>=num1 && num3>=num2)
+        {
+            greatest=num3;  
+        }
+        System.debug('Greatest Number of all three numbers : '+greatest);
+    }
+}

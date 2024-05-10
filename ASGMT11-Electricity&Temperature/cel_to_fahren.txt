@@ -1,0 +1,20 @@
+/*
+CtoF cf=new CtoF(25);
+cf.Calculate();
+*/
+public class CtoF 
+{
+    public Decimal t_c;
+    public Decimal t_f;
+    
+    public CtoF(Decimal t_c)
+    {
+        this.t_c=t_c;
+    }
+    
+    public void Calculate()
+    {
+        t_f=(t_c*(9.0/5.0))+32;
+        System.debug('Temperature in Degree Fahrenheit : '+t_f);
+    }  
+}
